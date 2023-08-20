@@ -25,7 +25,7 @@ function getDate() {
   const minut = today.getMinutes();
   const sec = today.getSeconds();
 
-  return ` ${month}/${date}/${year} ${hour}:${minut}:${sec} `;
+  return ` ${month}/${date}/${year} - ${hour}:${minut}:${sec} `;
 }
 
 const Header = (props: Props) => {
@@ -44,7 +44,7 @@ const Header = (props: Props) => {
       </div>
       <nav className="w-screen h-20 bg-slate-600 text-white flex items-center px-4 justify-between">
         <h1 className=" font-serif font-bold text-2xl">OSPOS</h1>
-        <ul className="flex gap-6 px-10">
+        <ul className="flex gap-6">
           <li className="cursor-pointer mw-80 hover:opacity-70 transition ease-in-out duration-100 flex flex-col items-center">
             <p className="bg-orange-600 h-8 w-8 rounded-full text-lg flex items-center justify-center">
               {customers}
