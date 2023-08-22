@@ -59,7 +59,7 @@ function Lsection() {
             <p>New Item</p>
           </div>
         </div>
-        <div className=""></div>
+        <div className="Bottom flex justify-between items-center h-14 py-2 px-3 bg-gray-300 mt-1 rounded-sm"></div>
       </div>
     </>
   );
