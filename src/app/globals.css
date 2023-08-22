@@ -10,14 +10,19 @@
   font-family: "Cairo", sans-serif !important;
 }
 
-
 .box {
-  @apply  p-2  border  bg-white rounded-sm  border-zinc-400  
+  @apply p-2 border bg-white rounded-sm border-zinc-400;
 }
 
 tr {
-  @apply  text-center mt-2
+  @apply text-center mt-2;
 }
 td {
-  @apply  text-center py-1 
+  @apply text-center py-1;
+}
+
+.app {
+  max-width: 1400px !important;
+  margin: 0 auto;
+  width: 100%;
 }

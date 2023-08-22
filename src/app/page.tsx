@@ -1,11 +1,11 @@
 import Header from "./components/header/Header";
-import SectionOne from "./components/section_one/layout";
+import SectionOne from "./components/sales/layout";
 
 export default function Home() {
   return (
-    <main>
+    <div className="app">
       <Header />
       <SectionOne />
-    </main>
+    </div>
   );
 }
