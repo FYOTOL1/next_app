@@ -10,8 +10,8 @@
   font-family: "Cairo", sans-serif !important;
 }
 body {
-  max-width: 2500px;
-  margin: 0 auto;
+  padding: 0 2.5%;
+  max-width: 2800px;
   width: 100%;
 }
 .box {

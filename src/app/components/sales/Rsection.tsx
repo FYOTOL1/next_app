@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
 import { Delete, correct, ex, suspended } from "../svg";
+import Link from "next/link";
 
 export default function section() {
   return (
@@ -64,7 +65,7 @@ export default function section() {
           </div>
           <button className="flex justify-evenly rounded-md text-white ms-auto items-center w-32 h-10 bg-teal-500 opacity-90 transition-opacity hover:opacity-70 ">
             <p className="text-lg">{correct}</p>
-            <p>Complete</p>
+            <Link href="/Search">Complete</Link>
           </button>
           <table className="w-full  shadow-sm shadow-gray-400 mt-1">
             <tr className="bg-zinc-500 text-gray-50 font-semibold">

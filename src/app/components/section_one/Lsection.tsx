@@ -1,6 +1,10 @@
 "use client";
+import { FormControl } from "@mui/material";
+import InputLabel from "@mui/material/InputLabel/InputLabel";
+import Select from "@mui/material/Select/Select";
+import MenuItem from "@mui/material/MenuItem/MenuItem";
+
 import React, { memo, useState } from "react";
-import style from "./style.module.css";
 import { suspended, takings } from "../svg";
 
 function Lsection() {
@@ -11,11 +15,19 @@ function Lsection() {
             <div className="Top flex justify-between items-center h-14 px-3 rounded-sm bg-gray-200">
                <div className="flex justify-between items-center w-48 h-10">
                   <p className="font-semibold text-gray-800">Register Mode</p>
-                  <select className="p-2 outline-none capitalize cursor-pointer rounded-sm transition-opacity hover:opacity-70 focus:opacity-70">
-                     <option value="sale">sale</option>
-                     <option value="sale">sale</option>
-                     <option value="sale">sale</option>
-                  </select>
+
+                  <FormControl className=" z">
+                     <InputLabel id="demo-simple-select-label">Action</InputLabel>
+                     <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        label="Mode"
+                     >
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                     </Select>
+                  </FormControl>
                </div>
                <div className="flex justify-between items-center w-60 h-10">
                   <div className="flex justify-between items-center w-30 h-full  bg-slate-800 rounded-md py-1 px-2 text-slate-50 cursor-pointer transition-opacity hover:opacity-75">
