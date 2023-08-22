@@ -9,3 +9,15 @@
   box-sizing: border-box;
   font-family: "Cairo", sans-serif !important;
 }
+
+
+.box {
+  @apply  p-2  border  bg-white rounded-sm  border-zinc-400  
+}
+
+tr {
+  @apply  text-center mt-2
+}
+td {
+  @apply  text-center py-1 
+}
