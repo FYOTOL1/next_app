@@ -8,21 +8,22 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Cairo", sans-serif !important;
-}
 
-.box {
-  @apply p-2 border bg-white rounded-sm border-zinc-400;
 }
-
-tr {
-  @apply text-center mt-2;
-}
-td {
-  @apply text-center py-1;
-}
-
-.app {
-  max-width: 1400px !important;
+body{
+  padding: 0 10px;
   margin: 0 auto;
   width: 100%;
 }
+.box {
+  @apply p-2 border bg-white rounded-sm border-zinc-400 ;
+}
+
+tr {
+  @apply text-center border-t-2 border-zinc-400 ;
+}
+td {
+  @apply text-center py-1 border border-zinc-400 ;
+}
+
+
