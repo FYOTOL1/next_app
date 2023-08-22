@@ -3,7 +3,7 @@ import SectionOne from "./components/sales/layout";
 
 export default function Home() {
   return (
-    <div className="app">
+    <div>
       <Header />
       <SectionOne />
     </div>

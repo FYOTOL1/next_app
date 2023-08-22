@@ -8,22 +8,23 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Cairo", sans-serif !important;
-
 }
-body{
-  padding: 0 10px;
+body {
+  max-width: 2500px;
   margin: 0 auto;
   width: 100%;
 }
 .box {
-  @apply p-2 border bg-white rounded-sm border-zinc-400 ;
+  @apply p-2 border bg-white rounded-sm border-zinc-400;
+}
+
+.flex-cent {
+  @apply flex justify-center items-center;
 }
 
 tr {
-  @apply text-center border-t-2 border-zinc-400 ;
+  @apply text-center border-t-2 border-zinc-400;
 }
 td {
-  @apply text-center py-1 border border-zinc-400 ;
+  @apply text-center py-1 border border-zinc-400;
 }
-
-
