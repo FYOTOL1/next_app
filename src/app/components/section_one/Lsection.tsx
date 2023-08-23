@@ -85,7 +85,7 @@ function Lsection() {
                            viewBox="0 0 24 24"
                            strokeWidth={2}
                            stroke="currentColor"
-                           className="w-5 h-5 text-green-600"
+                           className="w-5 h-5 text-green-600 "
                         >
                            <path
                               strokeLinecap="round"
