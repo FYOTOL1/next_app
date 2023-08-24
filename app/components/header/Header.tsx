@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import {
   airport_car,
   analyses,
-  basket,
+  sales,
   customers,
   gear,
   hart,
@@ -14,7 +14,7 @@ import {
   suppliers,
   user,
 } from "../svg";
-import style from "./style.module.css";
+import Link from "next/link";
 
 type Props = {};
 
@@ -60,7 +60,7 @@ const Header = (props: Props) => {
     },
     {
       logo: analyses,
-      name: "Report",
+      name: "Reports",
       style: "bg-blue-950",
     },
     {
@@ -69,9 +69,10 @@ const Header = (props: Props) => {
       style: "bg-teal-600",
     },
     {
-      logo: basket,
-      name: "Items Kits",
+      logo: sales,
+      name: "Sales",
       style: "bg-blue-950",
+      link: "sales",
     },
     {
       logo: user,
@@ -80,12 +81,12 @@ const Header = (props: Props) => {
     },
     {
       logo: hart,
-      name: "Reports",
+      name: "Gift Cards",
       style: "bg-red-500",
     },
     {
       logo: phone,
-      name: "Reports",
+      name: "Messages",
       style: "bg-orange-500",
     },
     {
@@ -93,34 +94,46 @@ const Header = (props: Props) => {
       name: "Taxes",
       style: "bg-blue-950",
     },
-
     {
       logo: gear,
       name: "Store Config",
       style: "bg-teal-600",
     },
   ];
+  let pathName = window.location.pathname.replace("/", "");
+
   const service = serviceArr.map((e) => {
     return (
-      <li
-        key={e.name}
-        className="cursor-pointer mw-80 hover:opacity-70 transition ease-in-out duration-100 flex flex-col items-center"
-      >
-        <span
-          className={`${e.style} h-8 w-8 rounded-full text-lg flex items-center justify-center `}
+      <>
+        <Link
+          className={`flex items-center h-full ${
+            pathName == e.name.toLowerCase() ? "bg-white text-black" : ""
+          }`}
+          href={e.name.toLowerCase()}
         >
-          {e.logo}
-        </span>
-        <p>{e.name}</p>
-      </li>
+          <li
+            key={e.name}
+            className="cursor-pointer w-full h-full  mw-80 hover:opacity-70 transition ease-in-out duration-100 flex flex-col items-center justify-center px-2 bg-transparent"
+          >
+            <span
+              className={`${e.style} h-8 w-8 rounded-full text-lg flex items-center justify-center `}
+            >
+              {e.logo}
+            </span>
+            <p>{e.name}</p>
+          </li>
+        </Link>
+      </>
     );
   });
 
   return (
-    <div className={style.header}>
-      <div className={style.cont}>
+    <div className="flex-cent">
+      <div className="w-full">
         <div className="w-full h-6 bg-slate-800 flex justify-between items-center px-2 text-white text-sm">
-          <div className="text-gray-300">{currentDate}</div>
+          <div className="text-gray-300 text-center w-[130px]">
+            {currentDate}
+          </div>
           <div className="text-sm text-gray-300">Open Source Point Of Sale</div>
           <div className=" flex items-center justify-between w-34">
             <p className="px-1 text-teal-600 cursor-pointer hover:opacity-70 transition ease-in-out duration-100">
@@ -134,7 +147,7 @@ const Header = (props: Props) => {
         </div>
         <nav className="w-full h-20 bg-slate-600 text-white flex items-center px-4 justify-between">
           <h1 className=" font-serif font-bold text-2xl">OSPOS</h1>
-          <ul className="flex gap-7">{service}</ul>
+          <ul className="flex items-center gap-7 h-full">{service}</ul>
         </nav>
       </div>
     </div>

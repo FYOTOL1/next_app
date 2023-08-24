@@ -1,12 +1,10 @@
 import React from "react";
-import style from "./style.module.css";
-import { Delete, correct, ex, suspended } from "../svg";
-import Link from "next/link";
+import { Delete, correct, ex, suspended } from "../../../components/svg";
 
 export default function section() {
   return (
     <>
-      <div className={`${style.rightS} bg-gray-300 p-3`}>
+      <div className="bg-gray-300 p-3 w-1/4 h-full rounded-sm">
         <div className="sec1 flex flex-col font-semibold text-gray-800 ">
           <div className="flex justify-between">
             <p>Name</p>
@@ -25,9 +23,8 @@ export default function section() {
             <p>Remove Customer</p>
           </button>
         </div>
-        <div
-          className={`${style.sec2} flex flex-col font-semibold text-gray-800 mt-1`}
-        >
+        <hr className="mt-1 border-black" />
+        <div className="flex flex-col font-semibold text-gray-800 mt-1">
           <div className="flex justify-between">
             <p>Sub Total</p>
             <p>{`$${400}.00`}</p>
@@ -41,9 +38,8 @@ export default function section() {
             <p>{`$${420}.00`}</p>
           </div>
         </div>
-        <div
-          className={`${style.sec3} flex flex-col font-semibold text-gray-800 mt-1`}
-        >
+        <hr className="mt-1 border-black" />
+        <div className="flex flex-col font-semibold text-gray-800 mt-1">
           <div className="flex justify-between">
             <p>Payments Total</p>
             <p>{`$${420}.00`}</p>
@@ -53,10 +49,11 @@ export default function section() {
             <p>{`$${0}.00`}</p>
           </div>
         </div>
-        <div className={`${style.sec4} h-56 w-full p-3`}>
+        <hr className="mt-1 border-black" />
+        <div className="h-56 w-full p-3 bg-zinc-200">
           <div className="subs1 flex justify-between items-center">
             <p>Payment Type</p>
-            <select className="p-2 rounded-sm outline-none border-none w-28 bg-gray-200">
+            <select className="p-2 rounded-sm outline-none border-none w-28 shadow-sm shadow-zinc-500 cursor-pointer transition-all hover:opacity-70 focus:opacity-70 bg-gray-200">
               <option>Cash</option>
             </select>
           </div>
@@ -65,7 +62,7 @@ export default function section() {
           </div>
           <button className="flex justify-evenly rounded-md text-white ms-auto items-center w-32 h-10 bg-teal-500 opacity-90 transition-opacity hover:opacity-70 ">
             <p className="text-lg">{correct}</p>
-            <Link href="/Search">Complete</Link>
+            <p>Complete</p>
           </button>
           <table className="w-full  shadow-sm shadow-gray-400 mt-1">
             <tr className="bg-zinc-500 text-gray-50 font-semibold">

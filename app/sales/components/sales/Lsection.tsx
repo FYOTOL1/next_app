@@ -1,13 +1,13 @@
 "use client";
 import React, { memo, useState } from "react";
 import style from "./style.module.css";
-import { suspended, takings } from "../svg";
+import { suspended, takings } from "../../../components/svg";
 
 function Lsection() {
   const [val, setval] = useState(String);
   return (
     <>
-      <div className={style.leftS}>
+      <div className="w-3/4 h-full">
         <div className="Top flex justify-between items-center h-14 px-3 rounded-sm bg-gray-200">
           <div className="flex justify-between items-center w-48 h-10">
             <p className="font-semibold text-gray-800">Register Mode</p>
@@ -43,7 +43,7 @@ function Lsection() {
               value={val}
             />
           </div>
-          <div className="flex justify-between items-center w-30 h-full bg-blue-500 rounded-md py-1 px-2 text-slate-50 cursor-pointer transition-opacity hover:opacity-75">
+          <div className="flex justify-between items-center w-30 h-full bg-blue-500 rounded-md py-2 px-2 text-slate-50 cursor-pointer transition-opacity hover:opacity-75">
             <p className="px-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
