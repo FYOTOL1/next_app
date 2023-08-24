@@ -100,14 +100,16 @@ const Header = (props: Props) => {
       style: "bg-teal-600",
     },
   ];
-  let pathName = window.location.pathname.replace("/", "");
 
   const service = serviceArr.map((e) => {
     return (
       <>
         <Link
           className={`flex items-center h-full ${
-            pathName == e.name.toLowerCase() ? "bg-white text-black" : ""
+            typeof window !== "undefined" &&
+            window.location.pathname.replace("/", "") == e.name.toLowerCase()
+              ? "bg-white text-black"
+              : ""
           }`}
           href={e.name.toLowerCase()}
         >
