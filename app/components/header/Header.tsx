@@ -113,7 +113,7 @@ const Header = (props: Props) => {
             </p>
           </div>
         </div>
-        <nav className="w-full h-[100px] bg-slate-600 text-white flex items-center justify-between">
+        <nav className="w-full h-[100px] bg-slate-600 text-white flex items-center justify-between px-3">
           <div className="flex items-center justify-center h-full w-[180px]">
             <Image
               className="w-[150px]"
@@ -123,7 +123,7 @@ const Header = (props: Props) => {
               height={300}
             />
           </div>
-          <ul className="LINKS relative flex items-center gap-7 h-full overflow-hidden me-2">
+          <ul className="LINKS relative flex items-center gap-7 h-full overflow-hidden">
             {service}
           </ul>
         </nav>
