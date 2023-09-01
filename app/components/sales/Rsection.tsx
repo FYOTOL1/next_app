@@ -1,5 +1,5 @@
 import React from "react";
-import { Delete, correct, ex, suspended } from "../../../components/svg";
+import { Delete, correct, ex, suspended } from "../svg";
 
 export default function section() {
   return (

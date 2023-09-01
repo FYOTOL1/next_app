@@ -1,5 +1,5 @@
 import { memo } from "react";
-import Sales from "./components/sales/layout";
+import Sales from "../components/sales/layout";
 
 function Home() {
   return (

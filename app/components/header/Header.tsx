@@ -1,20 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import {
-  airport_car,
-  analyses,
-  sales,
-  customers,
-  gear,
-  hart,
-  items,
-  items_kits,
-  money,
-  phone,
-  suppliers,
-  user,
-} from "../svg";
+import React, { useEffect, useRef, useState } from "react";
+import { rightArrow } from "../svg";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
@@ -39,65 +27,37 @@ const Header = (props: Props) => {
 
   const serviceArr = [
     {
-      logo: customers,
+      src: "/SVG/users-add.svg",
       name: "Customers",
-      style: "bg-orange-600",
     },
     {
-      logo: items,
+      src: "/SVG/price.svg",
       name: "Items",
-      style: "bg-pink-100 rotate-90",
     },
     {
-      logo: items_kits,
-      name: "Items Kit",
-      style: "bg-pink-100",
-    },
-    {
-      logo: suppliers,
-      name: "Suppliers",
-      style: "bg-blue-950",
-    },
-    {
-      logo: analyses,
+      src: "/SVG/report-add.svg",
       name: "Reports",
-      style: "bg-blue-950",
     },
     {
-      logo: airport_car,
+      src: "/SVG/symbols.svg",
       name: "Receivings",
-      style: "bg-teal-600",
     },
     {
-      logo: sales,
-      name: "Sales",
-      style: "bg-blue-950",
+      src: "/SVG/basket.svg",
+      name: "sales",
+    },
+    {
+      src: "/SVG/persons.svg",
+      name: "Employees",
+    },
+    {
+      src: "/SVG/gift.svg",
+      name: "gift",
       link: "sales",
     },
     {
-      logo: user,
-      name: "Employees",
-      style: "bg-blue-950",
-    },
-    {
-      logo: hart,
-      name: "Gift Cards",
-      style: "bg-red-500",
-    },
-    {
-      logo: phone,
-      name: "Messages",
-      style: "bg-orange-500",
-    },
-    {
-      logo: money,
-      name: "Taxes",
-      style: "bg-blue-950",
-    },
-    {
-      logo: gear,
-      name: "Store Config",
-      style: "bg-teal-600",
+      src: "/SVG/more.svg",
+      name: "Configurations ",
     },
   ];
 
@@ -115,14 +75,20 @@ const Header = (props: Props) => {
         >
           <li
             key={e.name}
-            className="cursor-pointer w-full h-full  mw-80 hover:opacity-70 transition ease-in-out duration-100 flex flex-col items-center justify-center px-2 bg-transparent"
+            className="cursor-pointer w-[90px] h-full hover:opacity-70 transition flex flex-col items-center mt-[10px] justify-center px-2 bg-transparent"
           >
             <span
-              className={`${e.style} h-8 w-8 rounded-full text-lg flex items-center justify-center `}
+              className={`bg-zinc-100 h-12 w-12 rounded-full text-lg flex items-center justify-center `}
             >
-              {e.logo}
+              <Image
+                className="w-full"
+                src={e.src}
+                alt={e.name}
+                width={200}
+                height={200}
+              />
             </span>
-            <p>{e.name}</p>
+            <p className="w-[90px] text-center">{e.name}</p>
           </li>
         </Link>
       </>
@@ -147,9 +113,19 @@ const Header = (props: Props) => {
             </p>
           </div>
         </div>
-        <nav className="w-full h-20 bg-slate-600 text-white flex items-center px-4 justify-between">
-          <h1 className=" font-serif font-bold text-2xl">OSPOS</h1>
-          <ul className="flex items-center gap-7 h-full">{service}</ul>
+        <nav className="w-full h-[100px] bg-slate-600 text-white flex items-center justify-between">
+          <div className="flex items-center justify-center h-full w-[180px] border">
+            <Image
+              className="w-[150px]"
+              src={"/SVG/Logo.svg"}
+              alt="Error"
+              width={300}
+              height={300}
+            />
+          </div>
+          <ul className="LINKS relative flex items-center gap-7 h-full overflow-hidden me-2">
+            {service}
+          </ul>
         </nav>
       </div>
     </div>

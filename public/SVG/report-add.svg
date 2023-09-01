@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="fluent-mdl2:report-add">
+<g clip-path="url(#clip0_56_30)">
+<path id="Vector" d="M60 40H48V12H60V40ZM0 32H12V52H0V32ZM44 48H40V52H32V0H44V48ZM16 12H28V52H16V12ZM64 52V56H56V64H52V56H44V52H52V44H56V52H64Z" fill="#465568"/>
+</g>
+<rect x="0.5" y="0.5" width="63" height="63" rx="31.5"/>
+</g>
+<defs>
+<clipPath id="clip0_56_30">
+<rect width="64" height="64" rx="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>
