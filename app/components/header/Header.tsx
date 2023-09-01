@@ -114,7 +114,7 @@ const Header = (props: Props) => {
           </div>
         </div>
         <nav className="w-full h-[100px] bg-slate-600 text-white flex items-center justify-between">
-          <div className="flex items-center justify-center h-full w-[180px] border">
+          <div className="flex items-center justify-center h-full w-[180px]">
             <Image
               className="w-[150px]"
               src={"/SVG/Logo.svg"}
