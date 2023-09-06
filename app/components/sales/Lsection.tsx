@@ -1,6 +1,5 @@
 "use client";
 import React, { memo, useState } from "react";
-import style from "./style.module.css";
 import { suspended, takings } from "../svg";
 
 function Lsection() {

@@ -1,10 +1,13 @@
 import React from "react";
-import Layout from "../components/items/Layout";
+import Items from "../components/items/Items";
+import HLayout from "../components/header/HLayout";
 
 export default function page() {
   return (
     <>
-      <Layout />
+      <HLayout>
+        <Items />
+      </HLayout>
     </>
   );
 }

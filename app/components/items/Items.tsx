@@ -21,11 +21,11 @@ type Data = {
   date: string;
 };
 
-const data: Data[] = [
+const API: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -35,7 +35,7 @@ const data: Data[] = [
   {
     id: 2,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -45,7 +45,7 @@ const data: Data[] = [
   {
     id: 3,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -55,7 +55,7 @@ const data: Data[] = [
   {
     id: 4,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -65,7 +65,7 @@ const data: Data[] = [
   {
     id: 5,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -75,7 +75,7 @@ const data: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -85,7 +85,7 @@ const data: Data[] = [
   {
     id: 2,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -95,7 +95,7 @@ const data: Data[] = [
   {
     id: 3,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -105,7 +105,7 @@ const data: Data[] = [
   {
     id: 4,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -115,7 +115,7 @@ const data: Data[] = [
   {
     id: 5,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -125,7 +125,7 @@ const data: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -135,7 +135,7 @@ const data: Data[] = [
   {
     id: 2,
     img: "/banana.png",
-    name: "banana",
+    name: "meet",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -145,7 +145,7 @@ const data: Data[] = [
   {
     id: 3,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -155,7 +155,7 @@ const data: Data[] = [
   {
     id: 4,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -165,7 +165,7 @@ const data: Data[] = [
   {
     id: 5,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -175,7 +175,7 @@ const data: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -185,7 +185,7 @@ const data: Data[] = [
   {
     id: 2,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -195,7 +195,7 @@ const data: Data[] = [
   {
     id: 3,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -205,7 +205,7 @@ const data: Data[] = [
   {
     id: 4,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -215,7 +215,7 @@ const data: Data[] = [
   {
     id: 5,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -225,7 +225,7 @@ const data: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -235,7 +235,7 @@ const data: Data[] = [
   {
     id: 2,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -245,7 +245,7 @@ const data: Data[] = [
   {
     id: 3,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -255,7 +255,7 @@ const data: Data[] = [
   {
     id: 4,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -265,7 +265,7 @@ const data: Data[] = [
   {
     id: 5,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -275,7 +275,7 @@ const data: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -285,7 +285,7 @@ const data: Data[] = [
   {
     id: 2,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -295,7 +295,7 @@ const data: Data[] = [
   {
     id: 3,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -305,7 +305,7 @@ const data: Data[] = [
   {
     id: 4,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -315,7 +315,7 @@ const data: Data[] = [
   {
     id: 5,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -325,7 +325,7 @@ const data: Data[] = [
   {
     id: 1,
     img: "/banana.png",
-    name: "banana",
+    name: "apple",
     from: "egypt",
     type: "fruit",
     price: 200,
@@ -575,7 +575,9 @@ const data: Data[] = [
 ];
 
 export default function Layout() {
+  const [name, setname] = useState("");
   const [view, setview] = useState("rows");
+
   return (
     <>
       <div className="w-full h-[1000px] p-5 bg-[#f7f9fd]">
@@ -584,6 +586,7 @@ export default function Layout() {
             <div className="flex justify-between items-center gap-3">
               <div className="relative h-[40px] w-[500px] rounded-md overflow-hidden px-[1px] shadow-sm focus:rounded-sm border-zinc-300 border outline-gray-300">
                 <input
+                  onChange={(e) => setname(e.target.value)}
                   className="w-full px-7 h-full bg-zinc-50 border-none outline-none py-2 text-gray-700 font-semibold"
                   type="text"
                 />
@@ -594,6 +597,10 @@ export default function Layout() {
               <button className="flex justify-around items-center text-lg flex-row-reverse px-2 h-[40px] w-28 border border-zinc-300 rounded-md transition-all hover:rounded-none hover:opacity-70">
                 <p className="px-2 text-[#555]">Filter</p>
                 <p>{filter}</p>
+              </button>
+              <button className="flex justify-around items-center text-lg flex-row-reverse px-2 h-[40px] w-28 border border-zinc-300 rounded-md transition-all hover:rounded-none hover:opacity-70">
+                <p className="px-2 text-[#555]">Item</p>
+                <p>{API.length}</p>
               </button>
             </div>
             <div className="flex items-center flex-row-reverse h-[40px] w-64">
@@ -633,7 +640,11 @@ export default function Layout() {
                 <th>date</th>
                 <th>actions</th>
               </tr>
-              {data.map((e) => (
+              {API.filter((v) =>
+                name.toLowerCase() === ""
+                  ? v
+                  : v.name.toLowerCase().includes(name)
+              ).map((e) => (
                 <RowCard
                   key={e.id}
                   id={e.id}
@@ -649,7 +660,7 @@ export default function Layout() {
             </table>
           ) : (
             <div className="flex justify-between items-center gap-[5px] flex-wrap">
-              {data.map((e) => (
+              {API.map((e) => (
                 <ColCard
                   key={e.id}
                   id={e.id}

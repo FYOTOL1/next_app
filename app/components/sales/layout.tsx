@@ -1,5 +1,4 @@
 import React from "react";
-import style from "./style.module.css";
 import Lsection from "./Lsection";
 import Rsection from "./Rsection";
 

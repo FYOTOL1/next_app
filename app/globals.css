@@ -42,6 +42,11 @@ tr {
 td {
   @apply text-center py-1 border border-zinc-400;
 }
+body {
+  height: 100%;
+  width: 100%;
+}
+
 .ap {
   background: linear-gradient();
 }

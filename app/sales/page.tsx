@@ -1,10 +1,13 @@
 import { memo } from "react";
 import Sales from "../components/sales/layout";
+import HLayout from "../components/header/HLayout";
 
 function Home() {
   return (
     <>
-      <Sales />
+      <HLayout>
+        <Sales />
+      </HLayout>
     </>
   );
 }
