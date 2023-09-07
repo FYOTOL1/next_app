@@ -15,9 +15,9 @@ export default function SectionLogin() {
           height={500}
         />
       </div>
-      <div className="flex justify-center items-center flex-col mt-5">
+      <div className="flex justify-center items-center flex-col mt-20">
         <h2 className="capitalize text-[32px] font-semibold text-[#1B2330]">
-          create new account
+          Login
         </h2>
         <Form Type="login" />
       </div>

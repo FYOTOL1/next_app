@@ -30,7 +30,7 @@ export default function HeaderAccount({ Type }: any) {
       <div className="flex justify-between items-center py-2">
         <div className="flex justify-between items-center text-[20px] text-[#1B2330] font-semibold max-w-[175px] min-w-[175px] w-[175px]">
           <div>{MDY}</div>
-          <p>-</p>
+          <p>•</p>
           <div>{SMH}</div>
         </div>
         <div className="text-[28px] max-w-[175px] min-w-[175px] w-[175px] text-center">

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { rightArrow } from "../svg";
 import Link from "next/link";
 import Image from "next/image";
 

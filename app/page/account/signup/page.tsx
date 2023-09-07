@@ -1,6 +1,6 @@
 import React from "react";
-import SectionSignup from "../../components/account/SectionSignup";
-import HeaderAccount from "../../components/account/HeaderAccount";
+import SectionSignup from "../../../components/account/SectionSignup";
+import HeaderAccount from "../../../components/account/HeaderAccount";
 
 export default function Signup() {
   return (

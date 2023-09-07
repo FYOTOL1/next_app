@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   email,
@@ -8,15 +8,42 @@ import {
   phone,
   username,
 } from "../../components/svg";
+import { useDispatch } from "react-redux";
+import { getUsers, postUser } from "../../redux/reducers/userSlice";
+import { useSelector } from "react-redux";
+import Loading from "../Loading";
 
-export default function Form({ Type }: any) {
+export default function Form({ Type, action }: any) {
+  const Store = useSelector((state: any) => state?.user);
+  const [Username, setUsername] = useState();
+  const [Email, setEmail] = useState();
+  const [Phone_number, setPhone_number] = useState();
+  const [Password, setPassword] = useState();
+  const [Password2, setPassword2] = useState();
+  const dispatch = useDispatch();
+
+  const handle = async (e: any) => {
+    e.preventDefault();
+    if (
+      Password2 == Password &&
+      Password != " " &&
+      Password2 != " " &&
+      Username != " "
+    ) {
+      dispatch(postUser({ Username, Email, Phone_number, Password }));
+    } else {
+      alert("Wrong Password");
+    }
+
+    try {
+    } catch (error) {}
+  };
   return (
     <>
-      {Type == "signup" ? (
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col justify-between gap-[20px] mt-1 w-[610px]"
-        >
+      {Store.loading ? (
+        <Loading />
+      ) : Type == "signup" ? (
+        <form className="flex flex-col justify-between gap-[20px] mt-1 w-[610px]">
           <div className="relative w-full">
             <label
               className="flex absolute top-[50%] left-3 translate-y-[-50%] capitalize focus:opacity-0"
@@ -25,6 +52,9 @@ export default function Form({ Type }: any) {
               <span>{email}</span>
             </label>
             <input
+              onChange={(e: any) => {
+                setEmail(e.target.value);
+              }}
               autoComplete="off"
               required
               minLength={4}
@@ -44,6 +74,9 @@ export default function Form({ Type }: any) {
               <span>{phone}</span>
             </label>
             <input
+              onChange={(e: any) => {
+                setPhone_number(e.target.value);
+              }}
               autoComplete="off"
               minLength={7}
               maxLength={11}
@@ -63,6 +96,9 @@ export default function Form({ Type }: any) {
               <span>{username}</span>
             </label>
             <input
+              onChange={(e: any) => {
+                setUsername(e.target.value);
+              }}
               autoComplete="off"
               min={3}
               maxLength={20}
@@ -82,6 +118,9 @@ export default function Form({ Type }: any) {
               <span>{password}</span>
             </label>
             <input
+              onChange={(e: any) => {
+                setPassword(e.target.value);
+              }}
               autoComplete="off"
               minLength={5}
               maxLength={40}
@@ -101,6 +140,9 @@ export default function Form({ Type }: any) {
               <span>{password}</span>
             </label>
             <input
+              onChange={(e: any) => {
+                setPassword2(e.target.value);
+              }}
               autoComplete="off"
               minLength={5}
               maxLength={40}
@@ -112,12 +154,13 @@ export default function Form({ Type }: any) {
             />
           </div>
           <button
+            onClick={(e) => handle(e)}
             className="flex justify-center items-center text-[28px] text-white w-full py-[10px] rounded-lg transition-all hover:opacity-70 focus:opacity-70 bg-[#B1262D]"
             type="submit"
           >
             <Link
               className="w-full h-full flex justify-center items-center"
-              href={"/account/signup"}
+              href={"/page/account/signup"}
             >
               <p>Sign Up</p>
               <span className="fill-white">{fullRightArrow}</span>
@@ -130,7 +173,7 @@ export default function Form({ Type }: any) {
           >
             <Link
               className="w-full h-full flex justify-center items-center"
-              href={"/account/login"}
+              href={"/page/account/login"}
             >
               <p>Login</p>
               <span className="fill-[#B1262D]">{fullRightArrow}</span>
@@ -186,7 +229,7 @@ export default function Form({ Type }: any) {
           >
             <Link
               className="w-full h-full flex justify-center items-center"
-              href={"/account/login"}
+              href={"/page/account/login"}
             >
               <p>Login</p>
               <span className="fill-white">{fullRightArrow}</span>
@@ -199,7 +242,7 @@ export default function Form({ Type }: any) {
           >
             <Link
               className="w-full h-full flex justify-center items-center"
-              href={"/account/signup"}
+              href={"/page/account/signup"}
             >
               <p>Signup</p>
               <span className="fill-[#B1262D]">{fullRightArrow}</span>

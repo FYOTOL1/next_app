@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { appleLogo } from "../components/svg";
+import { appleLogo } from "../../components/svg";
 
 export default function Page() {
   useEffect(() => {
