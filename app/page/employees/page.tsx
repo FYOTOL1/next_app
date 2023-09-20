@@ -1,6 +1,6 @@
 import React from "react";
 import HLayout from "../../components/header/HLayout";
-import Employee from "../../components/employees/employes";
+import Employee from "../../components/employees/Employes";
 
 export default function page() {
   return (
