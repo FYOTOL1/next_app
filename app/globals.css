@@ -9,6 +9,12 @@
   box-sizing: border-box;
   font-family: "Cairo", sans-serif !important;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 body {
   max-width: 2500px;
   margin: 0 auto;
@@ -16,6 +22,7 @@ body {
   height: 100%;
   padding: 0 1%;
 }
+
 .box {
   @apply p-2 border bg-white rounded-sm border-zinc-400;
 }
@@ -42,11 +49,20 @@ tr {
 td {
   @apply text-center py-1 border border-zinc-400;
 }
-body {
-  height: 100%;
-  width: 100%;
-}
 
 .ap {
   background: linear-gradient();
+}
+
+.ERROR {
+  animation: ERROR 0.4s alternate;
+}
+
+@keyframes ERROR {
+  from {
+    top: -56px;
+  }
+  to {
+    top: 0px;
+  }
 }

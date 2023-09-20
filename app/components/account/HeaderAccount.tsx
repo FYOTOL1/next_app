@@ -37,7 +37,7 @@ export default function HeaderAccount({ Type }: any) {
           OSPOS
         </div>
         <Link
-          href={`/account/${Type == "signup" ? "login" : "signup"}`}
+          href={`/page/account/${Type == "signup" ? "login" : "signup"}`}
           className="flex justify-end items-center max-w-[175px] min-w-[175px] w-[175px] transition-all hover:opacity-80"
         >
           <p className="px-2">{Type == "signup" ? "Login" : "Signup"}</p>

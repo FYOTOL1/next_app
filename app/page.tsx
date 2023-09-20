@@ -13,7 +13,7 @@ export default function Page() {
 
     setTimeout(() => {
       window.location.pathname = "/page/account/signup";
-    }, 5000);
+    }, 5050);
   }, []);
 
   return (

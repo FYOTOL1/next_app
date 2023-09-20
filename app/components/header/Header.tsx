@@ -43,7 +43,7 @@ const Header = (props: Props) => {
     },
     {
       src: "/SVG/basket.svg",
-      name: "sales",
+      name: "Sales",
     },
     {
       src: "/SVG/persons.svg",
@@ -52,7 +52,6 @@ const Header = (props: Props) => {
     {
       src: "/SVG/gift.svg",
       name: "gift",
-      link: "sales",
     },
     {
       src: "/SVG/more.svg",

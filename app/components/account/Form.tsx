@@ -9,41 +9,73 @@ import {
   username,
 } from "../../components/svg";
 import { useDispatch } from "react-redux";
-import { getUsers, postUser } from "../../redux/reducers/userSlice";
+import {
+  auth,
+  errorController,
+  login,
+  signup,
+} from "../../redux/reducers/userSlice";
 import { useSelector } from "react-redux";
 import Loading from "../Loading";
 
-export default function Form({ Type, action }: any) {
+export default function Form({ Type }: any) {
   const Store = useSelector((state: any) => state?.user);
-  const [Username, setUsername] = useState();
-  const [Email, setEmail] = useState();
-  const [Phone_number, setPhone_number] = useState();
-  const [Password, setPassword] = useState();
-  const [Password2, setPassword2] = useState();
+  const [Username, setUsername] = useState<string>();
+  const [Email, setEmail] = useState<string>();
+  const [Phone_number, setPhone_number] = useState<number>();
+  const [Password, setPassword] = useState<string>();
+  const [Password2, setPassword2] = useState<string>();
   const dispatch = useDispatch();
 
-  const handle = async (e: any) => {
+  const handleSignup = async (e: any) => {
     e.preventDefault();
-    if (
-      Password2 == Password &&
-      Password != " " &&
-      Password2 != " " &&
-      Username != " "
-    ) {
-      dispatch(postUser({ Username, Email, Phone_number, Password }));
-    } else {
-      alert("Wrong Password");
-    }
-
     try {
-    } catch (error) {}
+      dispatch(
+        signup({
+          Username,
+          Email,
+          Phone_number,
+          Password,
+          Role: "user",
+          Status: "login",
+        })
+      );
+    } catch (error) {
+      console.log(error, "Form");
+    }
   };
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+    try {
+      dispatch(
+        login({ email: Email, password: Password, phone_number: Phone_number })
+      );
+      dispatch(auth());
+    } catch (error) {
+      console.log(error, "Login Form");
+    }
+  };
+
   return (
     <>
+      {Store.error == "User Already Exist" ? (
+        <div
+          onClick={(e) => dispatch(errorController(""))}
+          className="ERROR absolute top-0 w-full h-14 text-xl font-semibold text-[#333] bg-red-300 flex justify-center items-center"
+        >
+          <p>{Store.error}</p>
+        </div>
+      ) : (
+        ""
+      )}
       {Store.loading ? (
         <Loading />
       ) : Type == "signup" ? (
-        <form className="flex flex-col justify-between gap-[20px] mt-1 w-[610px]">
+        <form
+          onSubmit={(e) => handleSignup(e)}
+          className="flex flex-col justify-between gap-[20px] mt-1 w-[610px]"
+        >
           <div className="relative w-full">
             <label
               className="flex absolute top-[50%] left-3 translate-y-[-50%] capitalize focus:opacity-0"
@@ -60,7 +92,7 @@ export default function Form({ Type, action }: any) {
               minLength={4}
               maxLength={30}
               id="email"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              className="py-3 px-10 rounded-[4px] lowercase outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
               type="email"
               placeholder="Email"
             />
@@ -82,8 +114,8 @@ export default function Form({ Type, action }: any) {
               maxLength={11}
               required
               id="phone_number"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
-              type="text"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              type="number"
               placeholder="Phone Number"
             />
           </div>
@@ -104,7 +136,7 @@ export default function Form({ Type, action }: any) {
               maxLength={20}
               required
               id="username"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
               type="text"
               placeholder="Username"
             />
@@ -126,8 +158,8 @@ export default function Form({ Type, action }: any) {
               maxLength={40}
               required
               id="password"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
-              type="text"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              type="password"
               placeholder="Password"
             />
           </div>
@@ -148,13 +180,12 @@ export default function Form({ Type, action }: any) {
               maxLength={40}
               required
               id="checking_of_password"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
               type="password"
               placeholder="Password"
             />
           </div>
           <button
-            onClick={(e) => handle(e)}
             className="flex justify-center items-center text-[28px] text-white w-full py-[10px] rounded-lg transition-all hover:opacity-70 focus:opacity-70 bg-[#B1262D]"
             type="submit"
           >
@@ -182,7 +213,7 @@ export default function Form({ Type, action }: any) {
         </form>
       ) : (
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={(e) => handleLogin(e)}
           className="flex flex-col justify-between gap-[20px] mt-1 w-[610px]"
         >
           <div className="relative w-full">
@@ -190,17 +221,34 @@ export default function Form({ Type, action }: any) {
               className="flex absolute top-[50%] left-3 translate-y-[-50%] capitalize"
               htmlFor="username"
             >
-              <span>{username}</span>
+              <span>{email}</span>
             </label>
             <input
               autoComplete="off"
-              min={3}
-              maxLength={20}
               required
-              id="username"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              id="email"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
               type="text"
-              placeholder="Username"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="relative w-full">
+            <label
+              className="flex absolute top-[50%] left-3 translate-y-[-50%] capitalize"
+              htmlFor="password"
+            >
+              <span>{phone}</span>
+            </label>
+            <input
+              autoComplete="off"
+              required
+              id="phone_number"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray] relative"
+              type="number"
+              placeholder="Phone Number"
+              onChange={(e) => setPhone_number(Number(e.target.value))}
             />
           </div>
 
@@ -213,13 +261,12 @@ export default function Form({ Type, action }: any) {
             </label>
             <input
               autoComplete="off"
-              minLength={5}
-              maxLength={40}
               required
               id="password"
-              className="py-3 px-10 rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
-              type="text"
+              className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
+              type="password"
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
