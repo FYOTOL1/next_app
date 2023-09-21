@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { appleLogo } from "./components/svg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [tim, settim] = useState(false);
+  const router: any = useRouter();
 
   useEffect(() => {
     setTimeout(() => {
@@ -12,7 +14,7 @@ export default function Page() {
     }, 2000);
 
     setTimeout(() => {
-      window.location.pathname = "/page/account/signup";
+      router.push("/page/account/signup");
     }, 5050);
   }, []);
 

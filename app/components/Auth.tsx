@@ -1,35 +1,38 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { auth } from "../redux/reducers/userSlice";
+import React, { useEffect } from "react";
 import Loading from "./Loading";
-import { appleLogo } from "./svg";
 
-export default function Auth({ children }: any) {
-  const [Auth, setAuth] = useState<string>("logout");
-  const dispatch = useDispatch();
+export default function Auth({ children, type }: any) {
   const router: any = useRouter();
   useEffect(() => {
-    (async (e) => {
-      const set: any = localStorage.getItem("u_id");
-      dispatch(auth());
-      setAuth("login");
-      if (!set?.length) {
-        router.push("/");
+    (() => {
+      const user_id: any = localStorage.getItem("u_id");
+      switch (type) {
+        case "login":
+          if (user_id?.length) return router.push("/page/items");
+          else if (!user_id?.length) return;
+          else return router.push("/");
+          break;
+        case "user":
+          if (user_id?.length) return;
+          else if (!user_id?.length) return router.push("/page/account/login");
+          else return router.push("/");
+          break;
+        case "admin":
+          if (user_id == "12123") return;
+          else if (user_id != "12123" || !user_id?.length) {
+            return router.push("/page/account/login");
+          } else if (user_id?.length) return router.push("/page/items");
+          else return router.push("/");
+          break;
       }
     })();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
-      {Auth == "login" ? (
-        <Loading>{children}</Loading>
-      ) : (
-        <div className="flex justify-center items-center absolute top-0 bottom-0 right-0 left-0 border bg-[#eee] cursor-default">
-          <p className="animate-ping">{appleLogo}</p>
-        </div>
-      )}
+      <Loading>{children}</Loading>
     </>
   );
 }

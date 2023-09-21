@@ -9,14 +9,10 @@ import {
   username,
 } from "../../components/svg";
 import { useDispatch } from "react-redux";
-import {
-  auth,
-  errorController,
-  login,
-  signup,
-} from "../../redux/reducers/userSlice";
+import { errorController, login, signup } from "../../redux/reducers/userSlice";
 import { useSelector } from "react-redux";
 import Loading from "../Loading";
+import { useRouter } from "next/navigation";
 
 export default function Form({ Type }: any) {
   const Store = useSelector((state: any) => state?.user);
@@ -26,10 +22,12 @@ export default function Form({ Type }: any) {
   const [Password, setPassword] = useState<string>();
   const [Password2, setPassword2] = useState<string>();
   const dispatch = useDispatch();
+  const router: any = useRouter();
 
   const handleSignup = async (e: any) => {
     e.preventDefault();
     try {
+      router.push("/page/items");
       dispatch(
         signup({
           Username,
@@ -41,19 +39,21 @@ export default function Form({ Type }: any) {
         })
       );
     } catch (error) {
-      console.log(error, "Form");
+      await router.push("/page/account/login");
+      return console.log(error, "Form");
     }
   };
 
-  const handleLogin = (e: any) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     try {
+      router.push("/page/items");
       dispatch(
         login({ email: Email, password: Password, phone_number: Phone_number })
       );
-      dispatch(auth());
     } catch (error) {
-      console.log(error, "Login Form");
+      router.push("/page/account/login");
+      return console.log(error, "Login Form");
     }
   };
 

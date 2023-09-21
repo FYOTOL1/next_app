@@ -1,13 +1,16 @@
 import React from "react";
 import HLayout from "../../components/header/HLayout";
 import Employee from "../../components/employees/Employes";
+import Auth from "../../components/Auth";
 
 export default function page() {
   return (
     <>
-      <HLayout>
-        <Employee />
-      </HLayout>
+      <Auth type="admin">
+        <HLayout>
+          <Employee />
+        </HLayout>
+      </Auth>
     </>
   );
 }

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -19,6 +20,7 @@ function getDate() {
 
 const Header = (props: Props) => {
   const [currentDate, setCurrentDate] = useState(getDate());
+  const router: any = useRouter();
 
   setInterval(() => {
     setCurrentDate(getDate());
@@ -93,6 +95,11 @@ const Header = (props: Props) => {
     );
   });
 
+  const SignOut = () => {
+    localStorage.removeItem("u_id")
+    router.push("/")
+  };
+
   return (
     <div className="flex-cent">
       <div className="w-full">
@@ -106,7 +113,10 @@ const Header = (props: Props) => {
               USER
             </p>{" "}
             |
-            <p className="px-1 text-teal-600 cursor-pointer hover:opacity-70 transition ease-in-out duration-100">
+            <p
+              onClick={() => SignOut()}
+              className="px-1 text-teal-600 cursor-pointer hover:opacity-70 transition ease-in-out duration-100"
+            >
               Sign out
             </p>
           </div>

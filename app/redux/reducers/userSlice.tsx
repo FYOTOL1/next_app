@@ -75,15 +75,6 @@ const userSlice = createSlice({
     errorController: (state, { payload }) => {
       state.error = payload;
     },
-    auth: (state) => {
-      const checkOfStorage = localStorage.getItem("u_id");
-      if (checkOfStorage?.length) {
-        state.status = "login";
-      } else {
-        state.status = "logout";
-      }
-      console.log(state.status);
-    },
   },
   extraReducers: {
     [getUsers.pending]: (state, { payload }) => {
@@ -125,6 +116,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { errorController, auth } = userSlice.actions;
+export const { errorController } = userSlice.actions;
 
 export default userSlice.reducer;

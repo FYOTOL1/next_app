@@ -6,7 +6,7 @@ import Auth from "../Auth";
 export default function SectionLogin() {
   return (
     <>
-      <Auth>
+      <Auth type="login">
         <div className="w-[275px]">
           <Image
             className="w-full"
