@@ -42,7 +42,8 @@ export default function Auth({ children, type }: any) {
         } else return router.push("/");
         break;
     }
-  }, []);
+    
+  }, [router, type]);
 
   return (
     <>
