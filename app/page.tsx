@@ -16,6 +16,7 @@ export default function Page() {
     setTimeout(() => {
       router.push("/page/account/signup");
     }, 5050);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
