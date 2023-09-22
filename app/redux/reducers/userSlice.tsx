@@ -75,6 +75,9 @@ const userSlice = createSlice({
     errorController: (state, { payload }) => {
       state.error = payload;
     },
+    setLoading: (state, { payload }) => {
+      state.loading = payload;
+    },
   },
   extraReducers: {
     [getUsers.pending]: (state, { payload }) => {
@@ -116,6 +119,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { errorController } = userSlice.actions;
+export const { errorController, setLoading } = userSlice.actions;
 
 export default userSlice.reducer;

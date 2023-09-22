@@ -27,7 +27,7 @@ export default function Form({ Type }: any) {
   const handleSignup = async (e: any) => {
     e.preventDefault();
     try {
-      router.push("/page/items");
+      await router.push("/page/items");
       dispatch(
         signup({
           Username,
@@ -47,10 +47,11 @@ export default function Form({ Type }: any) {
   const handleLogin = async (e: any) => {
     e.preventDefault();
     try {
-      router.push("/page/items");
-      dispatch(
+      await dispatch(
         login({ email: Email, password: Password, phone_number: Phone_number })
       );
+
+      return router.push("/page/items");
     } catch (error) {
       router.push("/page/account/login");
       return console.log(error, "Login Form");
@@ -224,7 +225,6 @@ export default function Form({ Type }: any) {
               <span>{email}</span>
             </label>
             <input
-              autoComplete="off"
               required
               id="email"
               className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray]"
@@ -242,7 +242,7 @@ export default function Form({ Type }: any) {
               <span>{phone}</span>
             </label>
             <input
-              autoComplete="off"
+              autoComplete="on"
               required
               id="phone_number"
               className="py-3 px-10 lowercase rounded-[4px] outline-none w-full bg-transparent transition-all [border:1px_solid_#707078] focus:[outline:2px_solid_gray] relative"
@@ -276,7 +276,7 @@ export default function Form({ Type }: any) {
           >
             <Link
               className="w-full h-full flex justify-center items-center"
-              href={"/page/account/login"}
+              href={""}
             >
               <p>Login</p>
               <span className="fill-white">{fullRightArrow}</span>
